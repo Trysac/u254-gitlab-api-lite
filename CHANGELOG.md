@@ -9,4 +9,5 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 
+- Added GitLab API lite client with offset/keyset pagination, retry handling, and same-origin link validation.
 - Initial project structure from the factory utility template.
