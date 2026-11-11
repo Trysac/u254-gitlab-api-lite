@@ -1,24 +1,15 @@
-"""
-Minimal GitLab REST v4 client over an injected transport: offset and keyset pagination, encoded
-project paths, RateLimit and Retry-After handling and same-origin next links
-"""
-
 from __future__ import annotations
 
-__all__ = ["__version__", "normalize"]
+from .client import GitLabClient, project_path
+from .errors import GitLabError
+from .transport import UrllibTransport
+from .types import Response, Transport
 
-__version__ = "0.1.0"
-
-
-def normalize(value: str) -> str:
-    """Return ``value`` trimmed and lower-cased.
-
-    Placeholder API created by the template: replace it with the utility's real behavior.
-
-    Raises:
-        ValueError: if ``value`` is empty or only whitespace.
-    """
-    cleaned = value.strip()
-    if not cleaned:
-        raise ValueError("value must not be empty")
-    return cleaned.lower()
+__all__ = [
+    "GitLabClient",
+    "GitLabError",
+    "Response",
+    "Transport",
+    "UrllibTransport",
+    "project_path",
+]
